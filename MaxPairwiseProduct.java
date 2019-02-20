@@ -16,15 +16,21 @@ public class MaxPairwiseProduct {
     }
     public long getMaxProduct(int arr[]){
         long maxProduct=0;
-        long product;
+        int max1=0;
+        int max2=0;
+        int maxIndex=0;
         for (int num1=0;num1<arr.length;num1++ ){
-            for (int num2=0;num2<arr.length;num2++){
-                product=(long)(arr[num1])*(long)(arr[num2]);
-                if (product>maxProduct && arr[num1]!=arr[num2]){
-                    maxProduct=product;
-                }
+            if (arr[num1]>max1){
+                max1=arr[num1];
+                maxIndex=num1;
             }
         }
+        for (int num1=0;num1<arr.length;num1++ ){
+            if (num1!=maxIndex && arr[num1]>max2){
+                max2=arr[num1];
+            }
+        }
+        maxProduct=(long)max1*(long)max2;
         return maxProduct;
     }
 }

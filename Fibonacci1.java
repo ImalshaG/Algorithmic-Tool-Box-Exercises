@@ -8,9 +8,12 @@ public class Fibonacci1 {
 
     }
     public int getFib(int num){
-        if (num<=1){
+        if (num==1){
             return 1;
-        }else {
+        }else if (num==0){
+            return 0;
+        }
+        else {
             return (getFib(num-1)+getFib(num-2));
         }
     }
